@@ -41,6 +41,7 @@
 			  <interceptor-ref name="loginValidate">
 			  <param name="role">admin</param>
 			  </interceptor-ref>
+			  <interceptor-ref name="defaultStack" />
 			</interceptor-stack>
 		</interceptors>
 
@@ -49,7 +50,7 @@
 		<action name="adminAction" class="adminAction">
 			<!-- <result>views/jsp/admin/adminWelcome.jsp</result> -->
 			<result name="success" type="dispatcher">
-				<param name="location">/WEB-INF/views/jsp/admin/adminPanel.jsp</param>
+				<param name="location">/WEB-INF/views/jsp/admin/${url}.jsp</param>
 			</result>
 		</action>
 	</package>
@@ -60,6 +61,7 @@
 			  <interceptor-ref name="loginValidate">
 			  <param name="role">student</param>
 			  </interceptor-ref>
+			  <interceptor-ref name="defaultStack" />
 			</interceptor-stack>
 		</interceptors>
 
@@ -68,7 +70,7 @@
 		<action name="studentAction" class="studentAction">
 			<!-- <result>views/jsp/admin/adminWelcome.jsp</result> -->
 			<result name="success" type="dispatcher">
-				<param name="location">/WEB-INF/views/jsp/student/studentPanel.jsp</param>
+				<param name="location">/WEB-INF/views/jsp/student/${url}.jsp</param>
 			</result>
 		</action>
 
@@ -80,6 +82,7 @@
 			  <interceptor-ref name="loginValidate">
 			  <param name="role">teacher</param>
 			  </interceptor-ref>
+			  <interceptor-ref name="defaultStack" />
 			</interceptor-stack>
 		</interceptors>
 
@@ -88,7 +91,7 @@
 		<action name="teacherAction" class="teacherAction">
 			<!-- <result>views/jsp/admin/adminWelcome.jsp</result> -->
 			<result name="success" type="dispatcher">
-				<param name="location">/WEB-INF/views/jsp/teacher/teacherPanel.jsp</param>
+				<param name="location">/WEB-INF/views/jsp/teacher/${url}.jsp</param>
 			</result>
 		</action>
 

@@ -7,6 +7,8 @@
 <title>panel</title>
 <link href="/EducationAssistantSystem/linkRsc/css/common.css"
 	rel="stylesheet" type="text/css" />
+	<link href="/EducationAssistantSystem/linkRsc/css/panel.css"
+	rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<div id="DIV-bigest">
@@ -49,7 +51,7 @@
 					</div>
 					<div class="list">
 						<ul>
-							<li><a href="#">个人资料</a></li>
+							<li><a target="workspaceFrame" href="#">个人资料</a></li>
 							<li><a href="#">修改资料</a></li>
 							<li><a href="#">修改密码</a></li>
 							<li><a href="#">注销登录</a></li>
@@ -59,7 +61,7 @@
 			</ul>
 		</div>
 		<div id="workspace">
-			<iframe id="workspaceFrame" href=""> </iframe>
+			<iframe id="workspaceFrame" > </iframe>
 		</div>
 		<jsp:include page="/WEB-INF/views/jsp/common/footer.jsp" />
 	</div>

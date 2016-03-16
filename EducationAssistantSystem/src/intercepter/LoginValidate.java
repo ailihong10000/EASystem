@@ -22,6 +22,9 @@ public class LoginValidate extends AbstractInterceptor {
 		// TODO Auto-generated method stub
 		Map session=ActionContext.getContext().getSession();
 		String username=(String)session.get("username");
+		Map paramMap = invocation.getInvocationContext().getParameters();
+		String[] urlList=(String[]) paramMap.get("url");
+		String url=urlList[0];
 		if (username!=null&&role.equals((String)session.get("role"))) {
 			return invocation.invoke();
 		}

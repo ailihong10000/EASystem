@@ -152,7 +152,7 @@ public class AjaxLoginAction extends ActionSupport {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("loginResult", true);
 		map.put("message", "登录成功*");
-		map.put("url", role + "Action");
+		map.put("url", role + "Action?url="+role+"Panel");
 		JSONObject json = new JSONObject();
 		json = JSONObject.fromObject(map);
 		result = json.toString();
