@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+	"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+    <bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<!-- <value>classpath:jdbc.properties</value> -->
+			<value>classpath:prop/jdbc.properties</value>
+		</property>
+	</bean>
+	
+	  <bean id="dataSource" destroy-method="close"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+	<!-- 	<property name="annotatedClasses">
+			<list>
+				<value>pojo.Admin</value>
+			</list>
+		</property> -->
+		<property name="mappingResources">
+		  <list>
+		      <value>hibernate/admin.hbm.xml</value>
+		      <value>hibernate/teacher.hbm.xml</value>
+		      <value>hibernate/student.hbm.xml</value>
+		  </list>
+		</property>
+		
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+	
+	<bean id="AdminDaoImpl" class="dao.impl.AdminDaoImpl">
+	    <property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="TeacherDaoImpl" class="dao.impl.TeacherDaoImpl">
+	    <property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="StudentDaoImpl" class="dao.impl.StudentDaoImpl">
+	    <property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="AdminServiceImpl" class="service.impl.AdminServiceImpl">
+	    <property name="adminDao" ref="AdminDaoImpl"/>
+	</bean>
+	
+	<bean id="TeacherServiceImpl" class="service.impl.TeacherServiceImpl">
+	    <property name="teacherDao" ref="TeacherDaoImpl"/>
+	</bean>
+	
+	<bean id="StudentServiceImpl" class="service.impl.StudentServiceImpl">
+	    <property name="studentDao" ref="StudentDaoImpl"/>
+	</bean>
+	
+	<bean id="securityCodeImageAction" class="action.SecurityCodeImageAction"
+		scope="prototype">
+	</bean>
+
+	<bean id="ajaxLoginAction" class="action.AjaxLoginAction"
+		scope="prototype">
+		<property name="as" ref="AdminServiceImpl"/>
+		<property name="ts" ref="TeacherServiceImpl"/>
+		<property name="ss" ref="StudentServiceImpl"/>
+	</bean>
+	
+	<bean id="loginAction" class="action.LoginAction"
+		scope="prototype">
+	</bean>
+	
+	<bean id="adminAction" class="action.AdminAction" scope="prototype">
+	
+	</bean>
+	
+	<bean id="teacherAction" class="action.TeacherAction" scope="prototype">
+	
+	</bean>
+	
+	<bean id="studentAction" class="action.StudentAction" scope="prototype">
+	
+	</bean>
+	
+	
+	
+</beans>
+
