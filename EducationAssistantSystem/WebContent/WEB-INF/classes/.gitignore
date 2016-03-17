@@ -1,3 +1,5 @@
-/action/
+/com/
+/hibernate/
+/prop/
+/spring/
 /struts/
-/intercepter/

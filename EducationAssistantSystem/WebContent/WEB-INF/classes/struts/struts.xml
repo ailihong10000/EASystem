@@ -8,7 +8,7 @@
 
 	<package name="easDefaultPackge" namespace="/" extends="struts-default">
 	<interceptors>
-			<interceptor name="loginValidate" class="intercepter.LoginValidate">
+			<interceptor name="loginValidate" class="com.ljc.eas.common.intercepter.LoginValidate">
 			</interceptor>
 		</interceptors>
 
