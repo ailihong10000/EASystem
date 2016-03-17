@@ -2,6 +2,8 @@ package com.ljc.eas.teacher.dao.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.ljc.eas.base.BaseDao;
 import com.ljc.eas.teacher.dao.TeacherDao;
 import com.ljc.eas.teacher.pojo.*;
@@ -9,7 +11,7 @@ import com.ljc.eas.teacher.pojo.*;
 
 
 
-
+@Repository
 public class TeacherDaoImpl extends BaseDao implements TeacherDao {
 
 	@Override

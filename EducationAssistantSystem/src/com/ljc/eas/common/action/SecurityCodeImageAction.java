@@ -3,15 +3,20 @@ package com.ljc.eas.common.action;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import org.apache.struts2.ServletActionContext;
+import org.springframework.stereotype.Controller;
+
 import com.ljc.eas.common.util.SecurityCode;
 import com.ljc.eas.common.util.SecurityImage;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
+@Controller
 public class SecurityCodeImageAction extends ActionSupport {
 	private ByteArrayInputStream imageStream;
 	public ByteArrayInputStream getImageStream() {

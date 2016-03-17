@@ -1,12 +1,16 @@
 package com.ljc.eas.student.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.ljc.eas.student.dao.StudentDao;
 import com.ljc.eas.student.service.StudentService;
 
 
-
+@Service
 public class StudentServiceImpl implements StudentService {
-	StudentDao studentDao;
+	@Autowired
+	private StudentDao studentDao;
 	
 
 	public StudentDao getStudentDao() {

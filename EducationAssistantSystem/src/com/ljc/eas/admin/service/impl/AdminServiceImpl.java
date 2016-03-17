@@ -1,10 +1,15 @@
 package com.ljc.eas.admin.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.ljc.eas.admin.dao.AdminDao;
 import com.ljc.eas.admin.service.AdminService;
 
+@Service
 public class AdminServiceImpl implements AdminService {
-	AdminDao adminDao;
+	@Autowired
+	private AdminDao adminDao;
 	
 	public AdminDao getAdminDao() {
 		return adminDao;

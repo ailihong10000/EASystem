@@ -2,10 +2,13 @@ package com.ljc.eas.common.intercepter;
 
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 
+@Component
 public class LoginValidate extends AbstractInterceptor {
 	private String role;
 

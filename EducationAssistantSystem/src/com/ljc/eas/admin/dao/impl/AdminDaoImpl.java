@@ -3,11 +3,13 @@ package com.ljc.eas.admin.dao.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.ljc.eas.admin.dao.AdminDao;
 import com.ljc.eas.admin.pojo.Admin;
 import com.ljc.eas.base.BaseDao;
 
-
+@Repository
 public class AdminDaoImpl extends BaseDao implements AdminDao {
 	
 	@Override

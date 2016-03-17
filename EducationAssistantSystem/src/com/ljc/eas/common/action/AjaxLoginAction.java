@@ -6,8 +6,14 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
 import javax.imageio.ImageIO;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
 import net.sf.json.JSONObject;
+
 import com.ljc.eas.admin.service.AdminService;
 import com.ljc.eas.common.util.SecurityCode;
 import com.ljc.eas.student.service.StudentService;
@@ -15,10 +21,15 @@ import com.ljc.eas.teacher.service.TeacherService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
+@Controller
 public class AjaxLoginAction extends ActionSupport {
+	@Autowired
 	private AdminService as;
+	@Autowired
 	private StudentService ss;
+	@Autowired
 	private TeacherService ts;
+	
 	private String username;
 	private String password;
 	private String verifyCode;

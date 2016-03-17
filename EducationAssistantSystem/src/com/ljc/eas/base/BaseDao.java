@@ -1,11 +1,15 @@
 package com.ljc.eas.base;
 
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
 public class BaseDao {
-	private HibernateTemplate hibernateTemplate;
+
+	@Autowired
 	private SessionFactory sessionFactory;
+	
+	private HibernateTemplate hibernateTemplate;
 
 	protected HibernateTemplate getHibernateTemplate() {
 		hibernateTemplate=new HibernateTemplate(sessionFactory);

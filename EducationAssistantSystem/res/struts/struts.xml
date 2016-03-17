@@ -9,7 +9,7 @@
 	<package name="easDefaultPackge" namespace="/" extends="struts-default">
 	<interceptors>
 			<interceptor name="loginValidate" class="com.ljc.eas.common.intercepter.LoginValidate">
-			</interceptor>
+			</interceptor> 
 		</interceptors>
 
 		<global-results>
@@ -18,7 +18,7 @@
 	</package>
 
 	<package name="action"  extends="easDefaultPackge">
-		<action name="securityCodeImageAction" class="securityCodeImageAction">
+		<action name="securityCodeImageAction" class="com.ljc.eas.common.action.SecurityCodeImageAction">
 			<result name="success" type="stream">
 				<param name="contentType">image/jpeg</param>
 				<param name="inputName">imageStream</param>
@@ -26,7 +26,7 @@
 			</result>
 		</action>
 		
-		<action name="loginAction" class="loginAction">
+		<action name="loginAction" class="com.ljc.eas.common.action.LoginAction">
 			<result name="success" type="dispatcher">/WEB-INF/views/jsp/login.jsp</result>
 		</action>
 
@@ -47,7 +47,7 @@
 
 		<default-interceptor-ref name="adminInterStack"/>
 		
-		<action name="adminAction" class="adminAction">
+		<action name="adminAction" class="com.ljc.eas.admin.action.AdminAction">
 			<!-- <result>views/jsp/admin/adminWelcome.jsp</result> -->
 			<result name="success" type="dispatcher">
 				<param name="location">/WEB-INF/views/jsp/admin/${url}.jsp</param>
@@ -67,7 +67,7 @@
 
 		<default-interceptor-ref name="studentInterStack"/>
 		
-		<action name="studentAction" class="studentAction">
+		<action name="studentAction" class="com.ljc.eas.student.action.StudentAction">
 			<!-- <result>views/jsp/admin/adminWelcome.jsp</result> -->
 			<result name="success" type="dispatcher">
 				<param name="location">/WEB-INF/views/jsp/student/${url}.jsp</param>
@@ -88,7 +88,7 @@
 
 		<default-interceptor-ref name="teacherInterStack"/>
 		
-		<action name="teacherAction" class="teacherAction">
+		<action name="teacherAction" class="com.ljc.eas.teacher.action.TeacherAction">
 			<!-- <result>views/jsp/admin/adminWelcome.jsp</result> -->
 			<result name="success" type="dispatcher">
 				<param name="location">/WEB-INF/views/jsp/teacher/${url}.jsp</param>
@@ -98,7 +98,7 @@
 	</package>
 
 	<package name="ajax" extends="json-default">
-		<action name="ajaxLoginAction" class="ajaxLoginAction">
+		<action name="ajaxLoginAction" class="com.ljc.eas.common.action.AjaxLoginAction">
 			<result name="error" type="json">
 				<param name="root">result</param>
 			</result>

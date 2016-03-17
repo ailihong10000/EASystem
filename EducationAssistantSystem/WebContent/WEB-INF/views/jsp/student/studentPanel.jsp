@@ -5,7 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>panel</title>
-<link href="/EducationAssistantSystem/linkRsc/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/EducationAssistantSystem/linkRsc/css/common.css" 
+rel="stylesheet" type="text/css" />
+<link href="/EducationAssistantSystem/linkRsc/css/panel.css"
+	rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="DIV-bigest"> 

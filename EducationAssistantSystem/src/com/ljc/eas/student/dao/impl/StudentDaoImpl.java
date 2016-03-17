@@ -2,11 +2,13 @@ package com.ljc.eas.student.dao.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.ljc.eas.base.BaseDao;
 import com.ljc.eas.student.dao.StudentDao;
 import com.ljc.eas.student.pojo.Student;
 
-
+@Repository
 public class StudentDaoImpl extends BaseDao implements StudentDao {
 
 	@Override
